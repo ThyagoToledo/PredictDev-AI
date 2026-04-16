@@ -2,7 +2,7 @@
 
 # PredictDev AI
 
-**Predictive Intelligence Platform for Software Project Management**
+**Plataforma de Inteligência Preditiva para Gestão de Projetos de Software**
 
 [![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React_18-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
@@ -11,355 +11,355 @@
 [![Google Gemini](https://img.shields.io/badge/Google_Gemini-4285F4?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
 [![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://vercel.com/)
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](LICENSE)
+[![Licença: MIT](https://img.shields.io/badge/Licen%C3%A7a-MIT-yellow.svg?style=flat-square)](LICENSE)
 [![Node.js](https://img.shields.io/badge/Node.js-18%2B-339933?style=flat-square&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![npm](https://img.shields.io/badge/npm-required-CB3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/)
+[![npm](https://img.shields.io/badge/npm-obrigatório-CB3837?style=flat-square&logo=npm&logoColor=white)](https://www.npmjs.com/)
 
 </div>
 
 ---
 
-## Table of Contents
+## Índice
 
-- [Overview](#overview)
-- [Technology Stack](#technology-stack)
-- [Features](#features)
-- [Project Architecture](#project-architecture)
-  - [Directory Structure](#directory-structure)
-  - [Routing Structure](#routing-structure)
-  - [Component Architecture](#component-architecture)
-  - [State Management](#state-management)
-  - [Design System](#design-system)
-- [Pages and Modules](#pages-and-modules)
-- [AI Integration](#ai-integration)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
-  - [Environment Variables](#environment-variables)
-  - [Running the Development Server](#running-the-development-server)
-  - [Building for Production](#building-for-production)
-- [Deployment](#deployment)
-- [Contributing](#contributing)
-- [License](#license)
-
----
-
-## Overview
-
-**PredictDev AI** is a SaaS dashboard for software project management powered by predictive artificial intelligence. The platform provides real-time risk analysis, delivery forecasting, bug prediction, and team workload optimization — all driven by Google Gemini 2.5 Flash integrated natively into the interface.
-
-The system combines a modern React 18 frontend with Tailwind CSS v4, featuring a dark-first design system with glassmorphism, fluid animations via Framer Motion (Motion.dev), and a floating AI chat assistant available across all pages.
-
-**Core value propositions:**
-
-- Predict project delays and delivery deadlines before they happen
-- Detect bug patterns and high-risk code areas proactively
-- Monitor team workload and generate redistribution recommendations
-- Interact directly with an embedded Gemini assistant for contextual project queries
+- [Visão Geral](#visão-geral)
+- [Stack Tecnológico](#stack-tecnológico)
+- [Funcionalidades](#funcionalidades)
+- [Arquitetura do Projeto](#arquitetura-do-projeto)
+  - [Estrutura de Diretórios](#estrutura-de-diretórios)
+  - [Estrutura de Rotas](#estrutura-de-rotas)
+  - [Arquitetura de Componentes](#arquitetura-de-componentes)
+  - [Gerenciamento de Estado](#gerenciamento-de-estado)
+  - [Sistema de Design](#sistema-de-design)
+- [Páginas e Módulos](#páginas-e-módulos)
+- [Integração com IA](#integração-com-ia)
+- [Primeiros Passos](#primeiros-passos)
+  - [Pré-requisitos](#pré-requisitos)
+  - [Instalação](#instalação)
+  - [Variáveis de Ambiente](#variáveis-de-ambiente)
+  - [Executando o Servidor de Desenvolvimento](#executando-o-servidor-de-desenvolvimento)
+  - [Build para Produção](#build-para-produção)
+- [Deploy](#deploy)
+- [Contribuindo](#contribuindo)
+- [Licença](#licença)
 
 ---
 
-## Technology Stack
+## Visão Geral
 
-| Layer | Technology | Version |
-|-------|-----------|---------|
-| **Language** | TypeScript | 5.x |
-| **UI Framework** | React | 18.3.1 |
-| **Build Tool** | Vite | 6.3.5 |
-| **Styling** | Tailwind CSS | 4.1.12 |
-| **Routing** | React Router | 7.13.0 |
-| **Component Library** | Radix UI Primitives | Multiple |
-| **Icons** | Lucide React | 0.487.0 |
-| **Charts** | Recharts | 2.15.2 |
-| **Animations** | Motion (Framer Motion) | 12.23.24 |
-| **AI Model** | Google Gemini 2.5 Flash | API v1beta |
-| **Theme** | next-themes | 0.4.6 |
-| **Notifications** | Sonner | 2.0.3 |
-| **Forms** | React Hook Form | 7.55.0 |
-| **Date Utilities** | date-fns | 3.6.0 |
-| **Deployment** | Vercel | — |
+**PredictDev AI** é um dashboard SaaS para gestão de projetos de software alimentado por inteligência artificial preditiva. A plataforma fornece análise de risco em tempo real, previsão de entregas, predição de bugs e otimização de carga de trabalho da equipe — todos impulsionados pelo Google Gemini 2.5 Flash integrado nativamente na interface.
+
+O sistema combina um frontend React 18 moderno com Tailwind CSS v4, apresentando um sistema de design dark-first com glassmorphism, animações fluidas via Framer Motion (Motion.dev) e um assistente de IA flutuante disponível em todas as páginas.
+
+**Proposições de valor principais:**
+
+- Prever atrasos em projetos e prazos de entrega antes que aconteçam
+- Detectar padrões de bugs e áreas de código de alto risco de forma proativa
+- Monitorar carga de trabalho da equipe e gerar recomendações de redistribuição
+- Interagir diretamente com um assistente Gemini incorporado para consultas contextuais sobre projetos
 
 ---
 
-## Features
+## Stack Tecnológico
 
-### Project Intelligence Dashboard
-- Real-time progress tracking versus planned deadlines
-- AI-generated risk score (Low / Medium / High) with probability percentage
-- Delivery date forecasting based on historical velocity
-- Task completion rate across all active projects
-
-### Predictive Bug Analysis
-- Bug trend visualization across the last 6 months
-- High-priority bug identification and categorization
-- Pattern recognition for recurring defect types
-- Suggested resolution strategies generated by AI
-
-### AI Alerts Engine
-- Proactive warnings for overloaded team members
-- Detection of underestimated tasks and scope creep risk
-- Identification of memory leak patterns and architectural anti-patterns
-- Actionable suggestions rendered directly in the dashboard
-
-### Team Management
-- Developer workload overview and capacity planning
-- Skill mapping and task assignment recommendations
-- Sprint health indicators
-
-### Configurations
-- Persistent user profile (name, role, company) stored via localStorage
-- Gemini API key management with live connection validation
-- Dark / Light theme toggle with system preference support
-- AI model selection
-
-### Floating Gemini Chat Assistant
-- Available on every page via a persistent floating button
-- Direct integration with Google Gemini 2.5 Flash API
-- Contextual project management assistant
-- Supports user-defined API key from Settings page
+| Camada | Tecnologia | Versão |
+|--------|-----------|---------|
+| **Linguagem** | TypeScript | 5.x |
+| **Framework de UI** | React | 18.3.1 |
+| **Ferramenta de Build** | Vite | 6.3.5 |
+| **Estilização** | Tailwind CSS | 4.1.12 |
+| **Roteamento** | React Router | 7.13.0 |
+| **Biblioteca de Componentes** | Radix UI Primitives | Múltiplas |
+| **Ícones** | Lucide React | 0.487.0 |
+| **Gráficos** | Recharts | 2.15.2 |
+| **Animações** | Motion (Framer Motion) | 12.23.24 |
+| **Modelo de IA** | Google Gemini 2.5 Flash | API v1beta |
+| **Tema** | next-themes | 0.4.6 |
+| **Notificações** | Sonner | 2.0.3 |
+| **Formulários** | React Hook Form | 7.55.0 |
+| **Utilitários de Data** | date-fns | 3.6.0 |
+| **Deploy** | Vercel | — |
 
 ---
 
-## Project Architecture
+## Funcionalidades
 
-### Directory Structure
+### Dashboard de Inteligência de Projetos
+- Rastreamento de progresso em tempo real versus prazos planejados
+- Pontuação de risco gerada por IA (Baixo / Médio / Alto) com percentual de probabilidade
+- Previsão de data de entrega baseada em velocidade histórica
+- Taxa de conclusão de tarefas em todos os projetos ativos
+
+### Análise Preditiva de Bugs
+- Visualização de tendência de bugs nos últimos 6 meses
+- Identificação e categorização de bugs de alta prioridade
+- Reconhecimento de padrões para tipos de defeitos recorrentes
+- Estratégias de resolução sugeridas geradas por IA
+
+### Engine de Alertas de IA
+- Avisos proativos para membros da equipe sobrecarregados
+- Detecção de tarefas subestimadas e risco de scope creep
+- Identificação de padrões de memory leak e anti-patterns arquiteturais
+- Sugestões práticas renderizadas diretamente no dashboard
+
+### Gerenciamento de Equipe
+- Visão geral de carga de trabalho de desenvolvedores e planejamento de capacidade
+- Mapeamento de habilidades e recomendações de atribuição de tarefas
+- Indicadores de saúde de sprint
+
+### Configurações
+- Perfil de usuário persistente (nome, cargo, empresa) armazenado via localStorage
+- Gerenciamento chave de API do Gemini com validação de conexão em tempo real
+- Toggle de tema claro/escuro com suporte a preferência de sistema
+- Seleção de modelo de IA
+
+### Assistente de Chat Gemini Flutuante
+- Disponível em todas as páginas através de um botão flutuante persistente
+- Integração direta com a API do Google Gemini 2.5 Flash
+- Assistente de gestão de projetos contextual
+- Suporta chave de API definida pelo usuário na página de Configurações
+
+---
+
+## Arquitetura do Projeto
+
+### Estrutura de Diretórios
 
 ```
 PredictDev-AI-main/
 ├── src/
-│   ├── main.tsx                    # Application entry point
+│   ├── main.tsx                    # Ponto de entrada da aplicação
 │   ├── app/
-│   │   ├── App.tsx                 # Root component with ThemeProvider and RouterProvider
-│   │   ├── routes.tsx              # Centralized route definitions
+│   │   ├── App.tsx                 # Componente raiz com ThemeProvider e RouterProvider
+│   │   ├── routes.tsx              # Definições de rotas centralizadas
 │   │   ├── components/
-│   │   │   ├── layout.tsx          # Main shell: sidebar, topbar, outlet
-│   │   │   ├── login.tsx           # Authentication page
-│   │   │   ├── dashboard.tsx       # Overview with metrics, charts, AI alerts
-│   │   │   ├── projetos.tsx        # Project listing and management
-│   │   │   ├── previsoes.tsx       # AI delivery forecast module
-│   │   │   ├── bugs.tsx            # Bug tracking and prediction
-│   │   │   ├── equipe.tsx          # Team management view
-│   │   │   ├── configuracoes.tsx   # Settings page
-│   │   │   ├── AiChat.tsx          # Floating AI chat widget (Gemini)
-│   │   │   ├── PageTransition.tsx  # Shared animated page wrapper
-│   │   │   ├── modals/             # Dialog and modal components
-│   │   │   ├── figma/              # Figma-generated component variants
-│   │   │   └── ui/                 # shadcn/ui primitive components (49 files)
+│   │   │   ├── layout.tsx          # Shell principal: sidebar, topbar, outlet
+│   │   │   ├── login.tsx           # Página de autenticação
+│   │   │   ├── dashboard.tsx       # Visão geral com métricas, gráficos, alertas de IA
+│   │   │   ├── projetos.tsx        # Listagem e gerenciamento de projetos
+│   │   │   ├── previsoes.tsx       # Módulo de previsão de entrega por IA
+│   │   │   ├── bugs.tsx            # Rastreamento e predição de bugs
+│   │   │   ├── equipe.tsx          # Visualização de gerenciamento de equipe
+│   │   │   ├── configuracoes.tsx   # Página de configurações
+│   │   │   ├── AiChat.tsx          # Widget flutuante de chat de IA (Gemini)
+│   │   │   ├── PageTransition.tsx  # Wrapper de página animada compartilhada
+│   │   │   ├── modals/             # Componentes de diálogo e modal
+│   │   │   ├── figma/              # Variantes de componentes geradas do Figma
+│   │   │   └── ui/                 # Componentes primitivos shadcn/ui (49 arquivos)
 │   │   ├── context/
-│   │   │   └── ThemeContext.tsx    # Global theme state (dark/light)
+│   │   │   └── ThemeContext.tsx    # Estado de tema global (claro/escuro)
 │   │   └── hooks/
-│   │       └── useLocalStorage.ts  # Persistent local storage hook
+│   │       └── useLocalStorage.ts  # Hook para persistência de localStorage
 │   ├── styles/
-│   │   ├── index.css               # Global CSS resets and base styles
-│   │   ├── theme.css               # CSS custom properties for dark/light tokens
-│   │   ├── tailwind.css            # Tailwind directives
-│   │   └── fonts.css               # Google Fonts import (Inter)
-│   └── imports/                    # Internal documentation and guides
-│       ├── README.md               # Full feature and design documentation
-│       ├── FIGMA_GUIDE.md          # Figma design system reference
-│       ├── IMPLEMENTATION_GUIDE.md # Component implementation guide
-│       ├── VISUAL_GUIDE.md         # Visual design guidelines
-│       └── RESUMO_EXECUTIVO.md     # Project executive summary
-├── index.html                      # HTML entry point
-├── vite.config.ts                  # Vite + Tailwind + React plugin configuration
-├── postcss.config.mjs              # PostCSS configuration
-├── package.json                    # Dependencies and scripts
-├── vercel.json                     # Vercel SPA rewrite rules
-├── .env.example                    # Environment variable template
-├── .gitignore                      # Git ignore rules
-└── iniciar_site.bat                # Windows batch script for local startup
+│   │   ├── index.css               # Resets CSS globais e estilos base
+│   │   ├── theme.css               # Propriedades CSS customizadas para tokens claro/escuro
+│   │   ├── tailwind.css            # Diretivas do Tailwind
+│   │   └── fonts.css               # Importação do Google Fonts (Inter)
+│   └── imports/                    # Documentação interna e guias
+│       ├── README.md               # Documentação completa de features e design
+│       ├── FIGMA_GUIDE.md          # Referência do sistema de design do Figma
+│       ├── IMPLEMENTATION_GUIDE.md # Guia de implementação de componentes
+│       ├── VISUAL_GUIDE.md         # Diretrizes de design visual
+│       └── RESUMO_EXECUTIVO.md     # Resumo executivo do projeto
+├── index.html                      # Ponto de entrada HTML
+├── vite.config.ts                  # Configuração Vite + Tailwind + plugin React
+├── postcss.config.mjs              # Configuração PostCSS
+├── package.json                    # Dependências e scripts
+├── vercel.json                     # Regras de reescrita SPA do Vercel
+├── .env.example                    # Template de variáveis de ambiente
+├── .gitignore                      # Regras de git ignore
+└── iniciar_site.bat                # Script batch do Windows para inicialização local
 ```
 
-### Routing Structure
+### Estrutura de Rotas
 
-All routes are defined in `src/app/routes.tsx` using React Router 7. The root path redirects to `/login`. Authenticated pages are rendered inside the `Layout` component via nested routing.
+Todas as rotas são definidas em `src/app/routes.tsx` usando React Router 7. O caminho raiz redireciona para `/login`. Páginas autenticadas são renderizadas dentro do componente `Layout` via roteamento aninhado.
 
 ```
-/                    → redirect to /login
-/login               → Login (unauthenticated)
-/                    → Layout (sidebar + topbar shell)
+/                    → redireciona para /login
+/login               → Login (não autenticado)
+/                    → Layout (shell sidebar + topbar)
   /dashboard         → Dashboard
-  /projetos          → Projects
-  /previsoes         → AI Forecasts
-  /bugs              → Bug Prediction
-  /equipe            → Team Management
-  /configuracoes     → Settings
+  /projetos          → Projetos
+  /previsoes         → Previsões de IA
+  /bugs              → Predição de Bugs
+  /equipe            → Gerenciamento de Equipe
+  /configuracoes     → Configurações
 ```
 
-### Component Architecture
+### Arquitetura de Componentes
 
-The application follows a feature-based component structure:
+A aplicação segue uma estrutura de componentes baseada em features:
 
-- **Layout** (`layout.tsx`): The persistent shell rendered for all authenticated routes. Contains the desktop sidebar, mobile overlay sidebar, top navigation bar, theme toggle, user avatar, notification button, and the floating `AiChat` widget.
+- **Layout** (`layout.tsx`): O shell persistente renderizado para todas as rotas autenticadas. Contém sidebar desktop, sidebar overlay mobile, barra de navegação superior, toggle de tema, avatar de usuário, botão de notificação e o widget flutuante `AiChat`.
 
-- **Page Components**: Each route maps to a standalone page component (`dashboard.tsx`, `projetos.tsx`, etc.) wrapped in `PageTransition` for animated entry/exit.
+- **Componentes de Página**: Cada rota mapeia para um componente de página autônomo (`dashboard.tsx`, `projetos.tsx`, etc.) envolvido em `PageTransition` para entrada/saída animada.
 
-- **UI Primitives** (`components/ui/`): A full set of 49 headless components built on Radix UI and styled with Tailwind CSS, following the shadcn/ui pattern. These include Accordion, AlertDialog, Avatar, Button, Card, Chart, Command, Dialog, Drawer, DropdownMenu, Form, Input, Select, Sidebar, Skeleton, Sonner, Table, Tabs, Tooltip, and more.
+- **Primitivos de UI** (`components/ui/`): Um conjunto completo de 49 componentes headless construídos em Radix UI e estilizados com Tailwind CSS, seguindo o padrão shadcn/ui. Incluem Accordion, AlertDialog, Avatar, Button, Card, Chart, Command, Dialog, Drawer, DropdownMenu, Form, Input, Select, Sidebar, Skeleton, Sonner, Table, Tabs, Tooltip e mais.
 
-- **AiChat** (`AiChat.tsx`): A self-contained floating chat widget that directly calls the Gemini 2.5 Flash API. It reads the API key from `localStorage` (set in Settings) or falls back to the `VITE_GEMINI_API_KEY` environment variable.
+- **AiChat** (`AiChat.tsx`): Um widget de chat flutuante autossuficiente que chama diretamente a API Gemini 2.5 Flash. Lê a chave de API do `localStorage` (definida em Configurações) ou volta para a variável de ambiente `VITE_GEMINI_API_KEY`.
 
-### State Management
+### Gerenciamento de Estado
 
-PredictDev AI does not use an external state management library. State is handled through:
+PredictDev AI não usa uma biblioteca externa de gerenciamento de estado. O estado é manipulado através de:
 
-| Mechanism | Usage |
-|-----------|-------|
-| `React.useState` | Local component state (UI toggles, form values) |
-| `useLocalStorage` hook | Persistent user profile, API key, preferences |
-| `ThemeContext` | Global dark/light mode state via React Context |
-| `next-themes` | DOM class manipulation and system theme detection |
+| Mecanismo | Uso |
+|-----------|-----|
+| `React.useState` | Estado local de componentes (toggles de UI, valores de formulário) |
+| Hook `useLocalStorage` | Perfil de usuário persistente, chave de API, preferências |
+| `ThemeContext` | Estado global de tema claro/escuro via React Context |
+| `next-themes` | Manipulação de classe DOM e detecção de tema de sistema |
 
-### Design System
+### Sistema de Design
 
-The design system is defined through CSS custom properties in `src/styles/theme.css` and consumed by Tailwind CSS v4.
+O sistema de design é definido através de propriedades CSS customizadas em `src/styles/theme.css` e consumido pelo Tailwind CSS v4.
 
-**Color Palette**
+**Paleta de Cores**
 
-| Token | Dark Mode | Light Mode | Usage |
-|-------|-----------|------------|-------|
-| Primary | `#4F46E5` (Indigo 600) | `#4F46E5` | Buttons, active states, gradients |
-| Secondary | `#06B6D4` (Cyan 500) | `#06B6D4` | Accents, chart lines, gradients |
-| Background | `#030303` | `#F8FAFC` | Page background |
-| Surface | `rgba(24,24,27,0.5)` | `#FFFFFF` | Cards and panels |
-| Border | `rgba(255,255,255,0.05)` | `rgba(0,0,0,0.08)` | Component borders |
-| Success | `#10B981` | `#10B981` | Positive indicators |
-| Warning | `#F59E0B` | `#F59E0B` | Risk alerts |
-| Danger | `#EF4444` | `#EF4444` | Critical errors |
+| Token | Modo Escuro | Modo Claro | Uso |
+|-------|-------------|-----------|-----|
+| Primary | `#4F46E5` (Indigo 600) | `#4F46E5` | Botões, estados ativos, gradientes |
+| Secondary | `#06B6D4` (Cyan 500) | `#06B6D4` | Acentos, linhas de gráfico, gradientes |
+| Background | `#030303` | `#F8FAFC` | Fundo da página |
+| Surface | `rgba(24,24,27,0.5)` | `#FFFFFF` | Cards e painéis |
+| Border | `rgba(255,255,255,0.05)` | `rgba(0,0,0,0.08)` | Bordas de componentes |
+| Success | `#10B981` | `#10B981` | Indicadores positivos |
+| Warning | `#F59E0B` | `#F59E0B` | Alertas de risco |
+| Danger | `#EF4444` | `#EF4444` | Erros críticos |
 
-**Typography**
+**Tipografia**
 
-- Font Family: `Inter` (Google Fonts)
-- Heading H1: `2.25rem / 800 weight`
-- Heading H2: `1.25rem / 700 weight`
-- Body: `0.875rem / 500 weight`
-- Caption: `0.75rem / 500 weight`
+- Família de Fonte: `Inter` (Google Fonts)
+- Heading H1: `2.25rem / peso 800`
+- Heading H2: `1.25rem / peso 700`
+- Body: `0.875rem / peso 500`
+- Caption: `0.75rem / peso 500`
 
 **Border Radius**
 
 - Cards: `16px`
-- Buttons and inputs: `12px`
-- Badges and avatars: `9999px`
+- Botões e inputs: `12px`
+- Badges e avatares: `9999px`
 
-**Animations**
+**Animações**
 
-All animations use `motion` (Framer Motion) with consistent timing:
-- Page transitions: fade + slide-up, 500ms ease-out
-- Card hover: `translateY(-3px)` lift with scale `1.02`
-- Sidebar items: staggered fade-in with 50ms delay per item
-- Active indicator: `layoutId` spring animation (stiffness 380, damping 30)
-- AI Chat window: scale + opacity entry from `0.9` to `1`
+Todas as animações usam `motion` (Framer Motion) com timing consistente:
+- Transições de página: fade + slide-up, 500ms ease-out
+- Hover em card: `translateY(-3px)` lift com scale `1.02`
+- Items da sidebar: fade-in escalonado com delay de 50ms por item
+- Indicador ativo: animação spring com `layoutId` (stiffness 380, damping 30)
+- Janela de Chat de IA: entrada com scale + opacity de `0.9` para `1`
 
 ---
 
-## Pages and Modules
+## Páginas e Módulos
 
 ### Dashboard (`/dashboard`)
 
-The central overview page. Renders four KPI metric cards (Project Risk, Delivery Forecast, Predicted Bugs, Task Completion), a dual-axis line chart comparing real progress against AI forecast and deadline, a bug trend area chart for the last 6 months, and a grid of AI alerts with severity-based color coding and actionable suggestions.
+A página central de visão geral. Renderiza quatro cards de métrica KPI (Risco de Projeto, Previsão de Entrega, Bugs Preditos, Conclusão de Tarefas), gráfico de linha com duplo eixo comparando progresso real contra previsão de IA e deadline, gráfico de área de tendência de bugs para os últimos 6 meses e um grid de alertas de IA com codificação de cor baseada em severidade e sugestões práticas.
 
-### Projects (`/projetos`)
+### Projetos (`/projetos`)
 
-Project listing view with status indicators, team assignment, progress bars, and deadline tracking per project.
+Visualização de listagem de projetos com indicadores de status, atribuição de equipe, barras de progresso e rastreamento de deadline por projeto.
 
-### AI Forecasts (`/previsoes`)
+### Previsões de IA (`/previsoes`)
 
-Dedicated module for AI-generated delivery predictions. Displays velocity analysis, sprint completion estimates, and risk probability distributions.
+Módulo dedicado para previsões de entrega geradas por IA. Exibe análise de velocidade, estimativas de conclusão de sprint e distribuições de probabilidade de risco.
 
-### Bug Prediction (`/bugs`)
+### Predição de Bugs (`/bugs`)
 
-Bug tracking enhanced with predictive analysis. Categorizes bugs by severity, shows historical trend data, and surfaces pattern-based predictions for future defects.
+Rastreamento de bugs aprimorado com análise preditiva. Categoriza bugs por severidade, mostra dados de tendência histórica e expõe previsões baseadas em padrões para defeitos futuros.
 
-### Team Management (`/equipe`)
+### Gerenciamento de Equipe (`/equipe`)
 
-Team member cards with current workload, assigned tasks, skill tags, and AI-generated redistribution recommendations for overloaded developers.
+Cards de membros da equipe com carga de trabalho atual, tarefas atribuídas, tags de habilidades e recomendações de redistribuição geradas por IA para desenvolvedores sobrecarregados.
 
-### Settings (`/configuracoes`)
+### Configurações (`/configuracoes`)
 
-User profile configuration (name, role, company), Gemini API key input with live connection test, theme preference toggle, and AI model selection. All settings are persisted to `localStorage`.
+Configuração de perfil de usuário (nome, cargo, empresa), input de chave de API Gemini com teste de conexão em tempo real, toggle de preferência de tema e seleção de modelo de IA. Todas as configurações são persistidas em `localStorage`.
 
 ---
 
-## AI Integration
+## Integração com IA
 
-PredictDev AI integrates directly with the **Google Gemini 2.5 Flash** model via the REST API.
+PredictDev AI integra-se diretamente com o modelo **Google Gemini 2.5 Flash** via API REST.
 
 **Endpoint:**
 ```
 POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
 ```
 
-**API Key resolution order:**
-1. Value stored in `localStorage` key `saas-apiKey` (user-configured via Settings)
-2. `VITE_GEMINI_API_KEY` environment variable (`.env` file)
+**Ordem de resolução de Chave de API:**
+1. Valor armazenado em `localStorage` chave `saas-apiKey` (configurado pelo usuário via Configurações)
+2. Variável de ambiente `VITE_GEMINI_API_KEY` (arquivo `.env`)
 
-**Why Gemini 2.5 Flash:**
-- Native multimodal support for fast contextual responses
-- Generous free tier suitable for development and small-scale deployment
-- Excellent latency for real-time chat interactions
-- No backend proxy required — API calls are made directly from the browser
+**Por que Gemini 2.5 Flash:**
+- Suporte multimodal nativo para respostas contextuais rápidas
+- Tier gratuito generoso adequado para desenvolvimento e deployment em pequena escala
+- Excelente latência para interações de chat em tempo real
+- Sem necessidade de proxy backend — chamadas de API são feitas diretamente do navegador
 
 ---
 
-## Getting Started
+## Primeiros Passos
 
-### Prerequisites
+### Pré-requisitos
 
-- **Node.js** 18 or higher
-- **npm** 9 or higher (or compatible package manager)
-- A **Google Gemini API key** — obtain one at [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
+- **Node.js** 18 ou superior
+- **npm** 9 ou superior (ou gerenciador de pacotes compatível)
+- Uma **chave de API Google Gemini** — obtenha em [https://aistudio.google.com/app/apikey](https://aistudio.google.com/app/apikey)
 
-### Installation
+### Instalação
 
 ```bash
-# 1. Clone the repository
-git clone https://github.com/your-username/PredictDev-AI.git
+# 1. Clone o repositório
+git clone https://github.com/seu-usuario/PredictDev-AI.git
 cd PredictDev-AI
 
-# 2. Install dependencies
+# 2. Instale as dependências
 npm install
 ```
 
-### Environment Variables
+### Variáveis de Ambiente
 
-Copy the example environment file and populate the required variables:
+Copie o arquivo de exemplo de ambiente e preencha as variáveis necessárias:
 
 ```bash
 cp .env.example .env
 ```
 
-Open `.env` and set your Gemini API key:
+Abra `.env` e defina sua chave de API Gemini:
 
 ```env
-# Google Gemini API Key
-# Obtain at: https://aistudio.google.com/app/apikey
-VITE_GEMINI_API_KEY=your_api_key_here
+# Chave de API Google Gemini
+# Obtenha em: https://aistudio.google.com/app/apikey
+VITE_GEMINI_API_KEY=sua_chave_api_aqui
 ```
 
-> The API key can also be configured at runtime through the Settings page (`/configuracoes`) without restarting the application.
+> A chave de API também pode ser configurada em tempo de execução através da página de Configurações (`/configuracoes`) sem reiniciar a aplicação.
 
-### Running the Development Server
+### Executando o Servidor de Desenvolvimento
 
 ```bash
 npm run dev
 ```
 
-The application will start at `http://localhost:5173` (or the next available port). The `--host` flag is included by default, making the server accessible on your local network.
+A aplicação iniciará em `http://localhost:5173` (ou a próxima porta disponível). A flag `--host` está incluída por padrão, tornando o servidor acessível em sua rede local.
 
-### Building for Production
+### Build para Produção
 
 ```bash
 npm run build
 ```
 
-The production bundle is output to the `dist/` directory, ready for static hosting.
+O bundle de produção é exportado para o diretório `dist/`, pronto para hospedagem estática.
 
 ---
 
-## Deployment
+## Deploy
 
-PredictDev AI is configured for deployment on **Vercel** with SPA client-side routing support.
+PredictDev AI é configurado para deploy em **Vercel** com suporte a roteamento SPA client-side.
 
-The `vercel.json` file rewrites all paths to `index.html`, ensuring React Router handles navigation correctly:
+O arquivo `vercel.json` reescreve todos os caminhos para `index.html`, garantindo que React Router manipule a navegação corretamente:
 
 ```json
 {
@@ -370,14 +370,14 @@ The `vercel.json` file rewrites all paths to `index.html`, ensuring React Router
 }
 ```
 
-**Deploy steps:**
+**Passos de deploy:**
 
-1. Push the repository to GitHub, GitLab, or Bitbucket
-2. Import the project at [https://vercel.com/new](https://vercel.com/new)
-3. Add the `VITE_GEMINI_API_KEY` environment variable in the Vercel project settings
-4. Deploy — Vercel will automatically detect the Vite configuration
+1. Faça push do repositório para GitHub, GitLab ou Bitbucket
+2. Importe o projeto em [https://vercel.com/new](https://vercel.com/new)
+3. Adicione a variável de ambiente `VITE_GEMINI_API_KEY` nas configurações do projeto Vercel
+4. Deploy — Vercel detectará automaticamente a configuração Vite
 
-Alternatively, use the Vercel CLI:
+Alternativamente, use a CLI do Vercel:
 
 ```bash
 npm install -g vercel
@@ -386,26 +386,26 @@ vercel --prod
 
 ---
 
-## Contributing
+## Contribuindo
 
-Contributions are welcome. Please open an issue first to discuss what you would like to change. Ensure all new code follows the existing component patterns and the established design system.
+Contribuições são bem-vindas. Por favor, abra uma issue primeiro para discutir o que gostaria de mudar. Certifique-se de que todo novo código segue os padrões de componentes existentes e o sistema de design estabelecido.
 
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/your-feature-name`)
-3. Commit your changes (`git commit -m 'feat: add your feature'`)
-4. Push to the branch (`git push origin feature/your-feature-name`)
-5. Open a Pull Request
+1. Faça fork do repositório
+2. Crie uma branch de feature (`git checkout -b feature/nome-da-sua-feature`)
+3. Faça commit de suas mudanças (`git commit -m 'feat: adicione sua feature'`)
+4. Faça push para a branch (`git push origin feature/nome-da-sua-feature`)
+5. Abra um Pull Request
 
 ---
 
-## License
+## Licença
 
-This project is licensed under the [MIT License](LICENSE).
+Este projeto é licenciado sob a [Licença MIT](LICENSE).
 
 ---
 
 <div align="center">
 
-Built with React, TypeScript, and Google Gemini AI
+Construído com React, TypeScript e Google Gemini AI
 
 </div>
