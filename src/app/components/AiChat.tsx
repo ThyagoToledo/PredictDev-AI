@@ -2,9 +2,9 @@ import { useState, useRef, useEffect } from "react";
 import { Brain, X, Send, Sparkles, Loader2, Bot, User } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
 
-// Defina a API Key do Gemini (Em produção, idealmente backend ou variável de ambiente)
-// IMPORTANTE: Insira a API KEY aqui ou através do .env
-const ENV_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "AIzaSyDk4jaiGeLtDGHhCMSF6GsQVSUPEjHTHMA";
+// API Key do Gemini carregado da variável de ambiente VITE_GEMINI_API_KEY
+// NUNCA insira a chave diretamente no código - configure no Vercel ou .env
+const ENV_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 export function AiChat() {
   const [isOpen, setIsOpen] = useState(false);

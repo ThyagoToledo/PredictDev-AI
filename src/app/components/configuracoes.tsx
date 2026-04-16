@@ -32,7 +32,7 @@ export function Configuracoes() {
   const [profileRole, setProfileRole] = useLocalStorage("saas-profileRole", "CTO");
   const [profileCompany, setProfileCompany] = useLocalStorage("saas-profileCompany", "TechCorp Inc.");
   
-  const [apiKey, setApiKey] = useLocalStorage("saas-apiKey", "AIzaSyDk4jaiGeLtDGHhCMSF6GsQVSUPEjHTHMA");
+  const [apiKey, setApiKey] = useLocalStorage("saas-apiKey", "");
 
   const [saved, setSaved] = useState(false);
 
