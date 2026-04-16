@@ -8,7 +8,7 @@ const ENV_API_KEY = import.meta.env.VITE_GEMINI_API_KEY || "";
 
 export function AiChat() {
   const [isOpen, setIsOpen] = useState(false);
-  const [messages, setMessages] = useState<{role: 'user' | 'ai', text: string}[]>([
+  const [messages, setMessages] = useState<{ role: 'user' | 'ai', text: string }[]>([
     { role: 'ai', text: 'Olá! Sou seu assistente de IA integrado com Gemini. Como posso ajudar com sua gestão hoje?' }
   ]);
   const [input, setInput] = useState("");
@@ -55,7 +55,7 @@ export function AiChat() {
       });
 
       const data = await response.json();
-      
+
       if (data.error) {
         throw new Error(data.error.message || "Erro na API Gemini");
       }
@@ -108,7 +108,7 @@ export function AiChat() {
                   </div>
                 </div>
               </div>
-              <button 
+              <button
                 onClick={() => setIsOpen(false)}
                 className="p-1.5 rounded-lg text-zinc-400 hover:text-white light:hover:text-zinc-800 hover:bg-white/10 light:hover:bg-zinc-100 transition-colors"
               >
@@ -119,7 +119,7 @@ export function AiChat() {
             {/* Messages */}
             <div className="flex-1 overflow-y-auto p-4 space-y-4 custom-scrollbar">
               {messages.map((msg, i) => (
-                <motion.div 
+                <motion.div
                   key={i}
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
@@ -128,8 +128,8 @@ export function AiChat() {
                   <div className={`p-2 rounded-xl shrink-0 ${msg.role === 'user' ? 'bg-indigo-500' : 'bg-zinc-800 light:bg-zinc-100'}`}>
                     {msg.role === 'user' ? <User className="w-4 h-4 text-white" /> : <Bot className="w-4 h-4 text-white light:text-zinc-700" />}
                   </div>
-                  <div className={`max-w-[75%] p-3 rounded-2xl text-sm ${msg.role === 'user' 
-                    ? 'bg-indigo-500 text-white rounded-tr-sm' 
+                  <div className={`max-w-[75%] p-3 rounded-2xl text-sm ${msg.role === 'user'
+                    ? 'bg-indigo-500 text-white rounded-tr-sm'
                     : 'bg-zinc-900 light:bg-zinc-50 border border-white/5 light:border-zinc-200 text-zinc-300 light:text-zinc-700 rounded-tl-sm'}`}>
                     {msg.text}
                   </div>

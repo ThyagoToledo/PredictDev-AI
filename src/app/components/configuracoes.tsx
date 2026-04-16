@@ -26,12 +26,12 @@ export function Configuracoes() {
   const [aiSuggestions, setAiSuggestions] = useLocalStorage("saas-aiSuggestions", true);
   const [weeklyReports, setWeeklyReports] = useLocalStorage("saas-weeklyReports", false);
   const [criticalAlerts, setCriticalAlerts] = useLocalStorage("saas-criticalAlerts", true);
-  
+
   const [profileName, setProfileName] = useLocalStorage("saas-profileName", "John Doe");
   const [profileEmail, setProfileEmail] = useLocalStorage("saas-profileEmail", "john.doe@empresa.com");
   const [profileRole, setProfileRole] = useLocalStorage("saas-profileRole", "CTO");
   const [profileCompany, setProfileCompany] = useLocalStorage("saas-profileCompany", "TechCorp Inc.");
-  
+
   const [apiKey, setApiKey] = useLocalStorage("saas-apiKey", "");
 
   const [saved, setSaved] = useState(false);
@@ -56,11 +56,10 @@ export function Configuracoes() {
           <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
             <Button
               onClick={handleSave}
-              className={`h-10 rounded-xl font-bold border-0 transition-all ${
-                saved
+              className={`h-10 rounded-xl font-bold border-0 transition-all ${saved
                   ? "bg-emerald-500 hover:bg-emerald-600 text-white shadow-lg shadow-emerald-500/25"
                   : "bg-white light:bg-zinc-900 text-zinc-950 light:text-white hover:bg-zinc-200 light:hover:bg-zinc-800 shadow-lg"
-              }`}
+                }`}
             >
               {saved ? (
                 <>
@@ -93,11 +92,10 @@ export function Configuracoes() {
                     <button
                       key={i}
                       onClick={() => setActiveMenu(i)}
-                      className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all text-left ${
-                        active
+                      className={`w-full flex items-center space-x-3 px-3 py-2.5 rounded-xl transition-all text-left ${active
                           ? "bg-white/8 light:bg-indigo-50 text-white light:text-indigo-700 border border-white/10 light:border-indigo-200"
                           : "text-zinc-400 light:text-zinc-500 hover:bg-white/5 light:hover:bg-zinc-50 hover:text-white light:hover:text-zinc-900 border border-transparent"
-                      }`}
+                        }`}
                     >
                       <Icon className={`w-4 h-4 ${active ? "text-[#06B6D4] light:text-indigo-500" : ""}`} />
                       <span className="text-sm font-medium">{item.label}</span>
